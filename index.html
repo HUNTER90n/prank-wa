@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Hacker 2026</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 480px;
+            margin: 40px auto;
+            padding: 30px;
+            border: 2px solid #0f0;
+            background: rgba(0,0,0,0.9);
+        }
+        h1 {
+            color: #ff0000;
+            text-shadow: 0 0 15px red;
+            font-size: 2.2rem;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background: #111;
+            border: 2px solid #0f0;
+            color: #0f0;
+            margin: 20px 0;
+            text-align: center;
+        }
+        button {
+            padding: 15px 40px;
+            font-size: 18px;
+            background: #ff0000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .loading {
+            font-size: 1.4rem;
+            color: #ff0;
+            margin: 30px 0;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+        .otp-box {
+            background: #111;
+            padding: 25px;
+            border: 3px solid #0f0;
+            margin: 20px 0;
+            font-size: 2.2rem;
+            letter-spacing: 10px;
+        }
+        .copy-btn {
+            background: #0f0;
+            color: black;
+            padding: 15px 40px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>WHATSAPP HACKER 2026</h1>
+    <p style="color:#ff0;">Enter Victim Number</p>
+    
+    <input type="text" id="number" placeholder="923XXXXXXXXX" maxlength="13">
+    
+    <button onclick="startHack()">HACK WHATSAPP</button>
+
+    <!-- Loading -->
+    <div id="loadingScreen" style="display:none;">
+        <div class="loading">CONNECTING TO WHATSAPP SERVER...</div>
+        <div class="loading">BYPASSING 2-FACTOR...</div>
+        <div class="loading">STEALING SESSION...</div>
+    </div>
+
+    <!-- OTP Screen -->
+    <div id="otpScreen" style="display:none;">
+        <h2 style="color:#ff0;">OTP VERIFICATION REQUIRED</h2>
+        <div class="otp-box" id="otpCode">------</div>
+        
+        <button class="copy-btn" onclick="copyOTP()">COPY OTP</button>
+        
+        <p style="margin-top:30px; color:#f00;">Victim will receive this OTP in 30 seconds</p>
+    </div>
+</div>
+
+<!-- Prank Sound (put prank.mp3 in same folder) -->
+<audio id="prankSound" src="prank.mp3"></audio>
+
+<script>
+// ALL FUNCTIONS ARE NOW AT THE BOTTOM - NO MORE "not defined" ERROR
+
+function startHack() {
+    const number = document.getElementById("number").value.trim();
+    
+    if (number.length < 10) {
+        alert("Enter a valid number!");
+        return;
+    }
+
+    document.querySelector("input").style.display = "none";
+    document.querySelector("button").style.display = "none";
+    document.getElementById("loadingScreen").style.display = "block";
+
+    setTimeout(() => {
+        document.getElementById("loadingScreen").style.display = "none";
+        document.getElementById("otpScreen").style.display = "block";
+        
+        const otp = Math.floor(100000 + Math.random() * 900000);
+        document.getElementById("otpCode").innerText = otp;
+    }, 2800);
+}
+
+function copyOTP() {
+    const otp = document.getElementById("otpCode").innerText;
+    
+    // Copy to clipboard
+    navigator.clipboard.writeText(otp);
+
+    // Go Fullscreen
+    const elem = document.documentElement;
+    if (elem.requestFullscreen) elem.requestFullscreen();
+    else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
+    else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
+
+    // Play prank.mp3
+    const sound = document.getElementById("prankSound");
+    sound.currentTime = 0;
+    sound.play();
+
+    // Button feedback
+    const btn = document.querySelector(".copy-btn");
+    const original = btn.innerText;
+    btn.innerText = "✅ COPIED! FULLSCREEN + SOUND PLAYING!";
+    btn.style.background = "#ff0";
+
+    setTimeout(() => {
+        btn.innerText = original;
+        btn.style.background = "#0f0";
+    }, 3000);
+}
+</script>
+
+</body>
+</html>
