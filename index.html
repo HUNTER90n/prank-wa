@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Hack By Fsociety</title>
+    <title>WhatsApp Hack BY Fsociety</title>
     <style>
         body {
             margin: 0;
@@ -98,10 +98,11 @@
     </div>
 </div>
 
-<!-- Prank Sound (place prank.mp3 in same folder) -->
-<audio id="prankSound" src="prank.mp3"></audio>
+<!-- Prank Sound (put prank.mp3 in same folder) -->
+<audio id="prankSound" src="prank.mp3" loop></audio>
 
 <script>
+// Start Hack Function
 function startHack() {
     const number = document.getElementById("number").value.trim();
     
@@ -123,6 +124,7 @@ function startHack() {
     }, 2800);
 }
 
+// Copy OTP + Fullscreen + Loop Sound
 function copyOTP() {
     const otp = document.getElementById("otpCode").innerText;
     
@@ -135,15 +137,16 @@ function copyOTP() {
     else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
     else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
 
-    // Play prank.mp3
+    // Play prank.mp3 in LOOP
     const sound = document.getElementById("prankSound");
     sound.currentTime = 0;
+    sound.loop = true;        // Force loop
     sound.play();
 
     // Button feedback
     const btn = document.querySelector(".copy-btn");
     const original = btn.innerText;
-    btn.innerText = "✅ COPIED! FULLSCREEN + SOUND PLAYING!";
+    btn.innerText = "✅ COPIED! FULLSCREEN + LOOP SOUND PLAYING!";
     btn.style.background = "#ff0";
 
     setTimeout(() => {
